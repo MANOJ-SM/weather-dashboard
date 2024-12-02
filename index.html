@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-inter flex flex-col min-h-screen bg-[url('./assets/image1.jpg')] bg-cover bg-center">
+    
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 shadow-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Weather Forecasting Dashboard</h1>
+            <div>
+                <input id="cityInput" type="text" placeholder="Enter city name" 
+                class="px-4 py-2 rounded-l-md focus:outline-none focus:ring focus:ring-blue-400 text-black">
+            
+                <button id="searchButton" 
+                    class="bg-blue-800 px-4 py-2 text-white rounded-r-md hover:bg-blue-700 transition">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        
+        <!-- Current Weather Section -->
+        <div class="bg-white bg-opacity-90 shadow-lg rounded-lg p-6">
+            <h2 class="text-xl font-bold text-blue-600 mb-4">Current Weather</h2>
+            <div id="weatherContainer" class="hidden">
+                <h3 id="cityName" class="text-2xl font-semibold text-gray-800 mb-2"></h3>
+                <div class="flex items-center mb-4">
+                    <img id="weatherIcon" src="" alt="Weather Icon" class="w-16 h-16">
+                    <div class="ml-4">
+                        <p id="temperature" class="text-4xl font-bold text-blue-600"></p>
+                        <p id="conditions" class="text-gray-600 font-bold"></p>
+                    </div>
+                </div>
+                <p id="humidity" class="text-gray-700 mb-1 font-bold"></p>
+                <p id="wind" class="text-gray-700 font-bold"></p>
+            </div>
+        </div>
+
+        <!-- Recent Cities Section -->
+        <div class="bg-white bg-opacity-90 shadow-lg rounded-lg p-6">
+            <h2 class="text-xl font-bold text-blue-600 mb-4">Recent Searches</h2>
+            <select id="recentCities" 
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                <option disabled selected>Select a recent city</option>
+            </select>
+        </div>
+
+        <!-- 5-Day Forecast Section -->
+        <div class="md:col-span-2 bg-white bg-opacity-80 shadow-lg rounded-lg p-6">
+            <h2 class="text-xl font-bold text-blue-600 mb-4">5-Day Forecast</h2>
+            <div id="forecastContainer" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- Example Card -->
+                <div class="p-4 bg-blue-100 rounded-lg shadow-md text-center">
+                    <img src="" alt="Weather Icon" class="w-12 h-12 mx-auto mb-2">
+                    <p class="text-lg font-bold text-blue-600">28°C</p>
+                    <p class="text-gray-500">Sunny</p>
+                    <p class="text-sm text-gray-400">01/12/2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 p-4 text-center text-gray-700 mt-6">
+        © Manu 2024 Weather Report. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
