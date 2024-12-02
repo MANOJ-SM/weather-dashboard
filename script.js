@@ -1,4 +1,4 @@
-const apiKey = "58d1f06f5a82b2d8b76936dac7e96291"; // Your OpenWeather API key
+const apiKey = "58d1f06f5a82b2d8b76936dac7e96291"; // OpenWeather API key
 const searchButton = document.getElementById("searchButton");
 const cityInput = document.getElementById("cityInput");
 const weatherContainer = document.getElementById("weatherContainer");
@@ -116,15 +116,4 @@ searchButton.addEventListener("click", () => {
     }
 });
 
-// Ensure city input remains visible and functional
-cityInput.addEventListener("input", () => {
-    // Ensure the search bar is never hidden or reset incorrectly
-    weatherContainer.classList.add("hidden");
-    forecastContainer.classList.add("hidden");
-});
-
-// Fix for ensuring the input stays visible while typing
-window.addEventListener('focus', () => {
-    cityInput.style.visibility = 'visible'; // Ensure the input field is visible when focused
-});
 
